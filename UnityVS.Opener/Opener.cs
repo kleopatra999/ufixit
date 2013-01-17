@@ -11,6 +11,9 @@ namespace UnityVS
 	{
 		public static void OpenFile(string openFile, string file, int line)
 		{
+			if (!File.Exists(FullPathTo(file)))
+				return;
+
 			Process.Start(new ProcessStartInfo
 			{
 				UseShellExecute = false,
